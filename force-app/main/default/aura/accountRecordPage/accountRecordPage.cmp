@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:availableForFlowScreens,force:lightningQuickActionWithoutHeader" access="global" controller="ContactListController" >
+
+    <aura:attribute name="recordId" type="Id" default="001dM000025bpAvQAI" />
+    
+    <aura:attribute name="render" type="Boolean" default="true" />
+
+    <aura:attribute name="data" type="Object"/> 
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="errors" type="Object" default="[]"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:if isTrue="{!v.render}" >
+
+        <lightning:datatable
+        onrowselection="{!c.handleRowClick}"
+        columns="{! v.columns }"
+        data="{! v.data }"
+        keyField="id"
+        errors="{! v.errors }"
+        draftValues="{! v.draftValues }"
+        onsave="{! c.handleSaveEdition }"
+        />
+
+        <aura:set attribute="else">
+            <c:recordPageByMe render="{!v.render}" recordId="{!v.recordId}" />
+        </aura:set>
+    </aura:if>
+
+</aura:component>

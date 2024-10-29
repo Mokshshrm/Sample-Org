@@ -1,11 +1,8 @@
 trigger UpdateLeadRating on Lead (before insert) {
+    
     if(Trigger.isInsert){
         if(Trigger.isBefore){
-            for(Lead it : Trigger.new){
-                System.debug('Found ' + it.Id);
-                it.Rating = 'Hot';
-            }
+            new Trigger_LeadRatingToHot().updateLeadRatingtoHot(Trigger.new);
         }
     }
-    System.debug('Done');
 }

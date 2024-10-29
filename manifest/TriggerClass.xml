@@ -1,0 +1,47 @@
+    
+    
+     <types>
+        <members>TwoSectionAccountContact</members>
+        <members>ContactListController</members>
+        <members>contactPaginationClass</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>searchEvent</members>
+        <members>SearchComponent</members>
+        <members>SecondComponent</members>
+        <members>firstComponent</members>
+        <members>ContactList</members>
+        <members>DemoApp</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    
+    
+<types>
+        <members>ContactTrigger</members>
+        <members>accountTrigger</members>
+        <members>DelteAccountIfContactIsDelted</members>
+        <members>SendEmailtoContactIfAccountNameIsUpdated</members>
+        <members>UpdateLeadRating</members>
+        <members>OpportunityUpdateCloseDateAndStage</members>
+        <name>ApexTrigger</name>
+    </types>
+    
+    <types>
+        <members>TriggerTestingClass</members>
+        <members>TestFactory</members>
+        <members>ScheduleJobWhichUpdateAccountDescription</members>
+        <members>ServiceCallout</members>
+        <members>AddingAttachmentWithFutureMethod</members>
+        <members>AsynClassPractice</members>
+        <members>ClassWhichThrowCustom</members>
+        <members>SheepProblem</members>
+        <members>TheGreasteProblem</members>
+        <members>UpdateAccountDescription</members>
+        <members>Trigger_SendEmailWhenAccountNameUpdate</members>
+        <members>Trigger_DeleteAccount</members>
+        <members>Trigger_LeadRatingToHot</members>
+        <members>Trigger_OpportunityUpdaCloseDateAndStage</members>
+        <name>ApexClass</name>
+    </types>
