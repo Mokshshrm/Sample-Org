@@ -22,7 +22,7 @@
         })
 
         component.set('v.eveData', {
-
+            sobjectType: 'Event'
         });
         return;
     },
@@ -31,7 +31,6 @@
 
         if (component.get('v.cmp_no') === 1)
             return;
-
         var action = component.find('component' + component.get('v.cmp_no'));
         action.getData(true);
 
@@ -59,7 +58,6 @@
         let data = event.getParam('data');
 
         if (data === undefined) {
-            console.log('Will be not rendered');
             return;
         }
 
@@ -74,7 +72,6 @@
             else if (component.get('v.prev'))
                 component.set('v.prev', false);
 
-            console.log('next')
         }
         else {
 
@@ -88,7 +85,6 @@
             if (!component.get('v.next'))
                 component.set('v.next', true)
 
-            console.log('prev')
         }
 
         helper.setOnViewComponent(component, event);

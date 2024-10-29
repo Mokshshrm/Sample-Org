@@ -19,7 +19,7 @@
             Title: Title,
             Birthdate: Birthdate,
         }
-        console.log('In contactform')
+        
         if (!helper.validation(data)) {
             action.setParams({
                 SObject: 'conData',
@@ -34,7 +34,7 @@
                 isPrev: event.getParam('arguments').isPrev
             });
         }
-        console.log('fireed')
+        
         action.fire();  
     }
 })

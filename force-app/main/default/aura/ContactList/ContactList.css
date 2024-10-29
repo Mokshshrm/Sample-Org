@@ -11,8 +11,7 @@
     height: auto !important;
     box-shadow: 0px 0px 2px 0px rgba(48, 46, 46, 0.517) !important;
 }
-
-.THIS .input-section-local {
+.THIS .input-section-local{
     width: 100%;
 }
 
@@ -30,17 +29,12 @@
     padding: 0 0rem !important;
 }
 
-.THIS .slds-modal__container {
-    width: 70%;
-    max-width: none !important;
-    min-width: none !important;
-}
-.THIS .slds-modal__container {
-    width: 80% !important;
-}
-
 .THIS .input-section {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, auto);
+}
+
+.THIS .slds-modal__container {
+    width: 80% !important;
 }

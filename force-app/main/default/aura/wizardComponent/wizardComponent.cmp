@@ -44,7 +44,7 @@
       </aura:if> 
 
       <aura:if  isTrue="{!v.var_third}">
-         <c:EventForm aura:id="component3" />
+         <c:EventForm aura:id="component3" eveData="{#v.eveData}" />
       </aura:if> 
 
    </div>

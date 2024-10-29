@@ -1,6 +1,6 @@
 trigger SendEmailtoContactIfAccountNameIsUpdated on Account (before update,before insert,after insert,after update) {
     
-    Trigger_SendEmailWhenAccountNameUpdate obj = new Trigger_SendEmailWhenAccountNameUpdate(Trigger.isAfter,Trigger.isBefore,Trigger.isInsert,Trigger.isUpdate,Trigger.isDelete,Trigger.isUndelete,Trigger.new,Trigger.newMap,Trigger.old,Trigger.oldMap);
+    Trigger_SendEmailWhenAccountNameUpdate obj = new Trigger_SendEmailWhenAccountNameUpdate();
     
     System.debug('Account');
     

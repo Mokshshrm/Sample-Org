@@ -41,7 +41,6 @@
     },
 
     handleFlowDataEvent: function (component, event, helper) {
-
         return true;
     },
 })

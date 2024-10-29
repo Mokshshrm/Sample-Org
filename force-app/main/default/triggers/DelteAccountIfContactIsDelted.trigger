@@ -1,37 +1,43 @@
 trigger DelteAccountIfContactIsDelted on Contact (before delete, after insert,after update, before insert, before update) {
     
-    Trigger_DeleteAccount RollUpOBj = new Trigger_DeleteAccount(Trigger.isAfter,Trigger.isBefore,Trigger.isInsert,Trigger.isUpdate,Trigger.isDelete,Trigger.isUndelete,Trigger.new,Trigger.newMap,Trigger.old,Trigger.oldMap);
+    Trigger_DeleteAccount RollUpOBj = new Trigger_DeleteAccount();
     
-    if(Trigger.isInsert){
-        if(Trigger.isAfter){
-            RollUpOBj.afterInsert();
-        }
-        else{
-            RollUpOBj.beforeInsert();
-        }
+    // if(Trigger.isInsert){
+        //     if(Trigger.isAfter){
+            //         RollUpOBj.CreateEvents(Trigger.new);
+        //     }
+    // }
+    // else if(Trigger.isDelete){
+        
+        //     if(Trigger.isAfter){
+            //         RollUpOBj.deleteDuplicate(Trigger.old);
+        //     }
+    // }
+    
+    
+    // (Trigger.isBefore && Trigger.isDelete )
+    // Roll-Up Summary On Account TotalAmount__c
+    
+    
+    if((Trigger.isAfter && Trigger.isUpdate) || (Trigger.isAfter && Trigger.isInsert)){
+        System.debug('2');
+        RollUpOBj.CalCulateRollUpSummary(Trigger.new, Trigger.oldMap, Trigger.isInsert,Trigger.isDelete);
     }
-    else if(Trigger.isDelete){
-        if(Trigger.isAfter){
-            RollUpOBj.afterDelete();
-        }
-        else{
-            
-        }
+    
+    //  Contact Account_Name is Changed Will be Automatically Change all Parent Account Associated Values
+    
+    if((Trigger.isUpdate && Trigger.isAfter)){
+        System.debug('3');
+        RollUpOBj.ChangeAssociatedName(Trigger.new, Trigger.oldMap);
+        // RollUpOBj.UpdateAccountRecords();
     }
-    else if(Trigger.isUpdate){
-        if(Trigger.isAfter){
-            RollUpOBj.afterUpdate();
-        }
-        else{
-            RollUpOBj.beforeUpdate();
-        }
+    
+    if((Trigger.isInsert && Trigger.isBefore) || (Trigger.isUpdate && Trigger.isBefore)){
+        System.debug('1');
+        RollUpOBj.HandleAllYourMess(Trigger.new,Trigger.oldMap);
     }
-    else if(Trigger.isUndelete){
-        if(Trigger.isBefore){
-            
-        }
-        else{
-            
-        }
-    }
+    
+    // If Contact Limit Exceed from Account maxLimit Will be Distributed Within maxLimit ;
+    
+    
 }

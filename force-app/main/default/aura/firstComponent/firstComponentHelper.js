@@ -30,8 +30,7 @@
             var action = component.get('c.SearchContact');
 
             action.setParams({
-                keyWords: keyWords,
-                accId: component.get('v.recordId')
+                keyWords: keyWords
             })
 
             action.setCallback(this, function (response) {
@@ -69,4 +68,4 @@
     getMaxPage: function (component) {
         return true;
     }
-}); 
+});

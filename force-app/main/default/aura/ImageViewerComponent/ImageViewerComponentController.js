@@ -8,13 +8,12 @@
         let cssObj = component.get('v.cssObj')
 
         const descrption = document.getElementsByClassName('cmp-img-description')[0];
-        const img = document.getElementsByClassName('img-tag')[0];
+        descrption.style.fontSize = cssObj.fontSize;
+        descrption.style.color = cssObj.fontColor;
+        descrption.textContent = cssObj.description;
 
-        img.setAttribute('src', cssObj.get('imgUrl'));
-        descrption.style.fontSize = cssObj.get('fontSize');
-        descrption.style.color = cssObj.get('fontColor');
-        descrption.textContent = cssObj.get('description');
-        
+        document.getElementById('background-boxx').style.backgroundColor = cssObj.backgroundColor;
+
         return;
     }
 })

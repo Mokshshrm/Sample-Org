@@ -3,7 +3,7 @@
     <aura:attribute name="accData" type="Object" />
     
     
-    <aura:registerEvent name="SendingDataToParent" type="c:FlowingDataFromWizard"/>
+    <aura:registerEvent name="sendAccountoParent" type="c:FlowingDataFromWizard"/>
 
 
     <aura:method name="getData" access="Public" action="{!c.handleFormData}">
@@ -19,7 +19,7 @@
         <div class="main-form-container">
             
             <div class="input-section-div">
-                <lightning:input value="{#v.accData.Name}" aura:id="input-Name" type="text" required="true" name="Name" label="Account Name" />
+                <lightning:input  value="{#v.accData.Name}" aura:id="input-Name" type="text" required="true" name="Name" label="Account Name" />
                 <lightning:input value="{#v.accData.Phone}" aura:id="input-Phone" type="tel" name="Phone" label="Phone" placeholder="" />
             </div>
 

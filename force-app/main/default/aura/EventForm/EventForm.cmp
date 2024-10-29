@@ -1,45 +1,21 @@
 <aura:component>
         
-    <aura:registerEvent name="SendingDataToParent" type="c:FlowingDataFromWizard"/>
+    <aura:attribute name="eveData" type="Object" />
 
+    <aura:registerEvent name="sendEventToParent" type="c:FlowingDataFromWizard"/>
 
     <aura:method name="getData" access="Public" action="{!c.handleFormData}">
         <aura:attribute name="isPrev" type="Boolean" />
     </aura:method>
 
-    <lightning:recordEditForm objectApiName="Account">
+    <lightning:recordEditForm objectApiName="Event">
         <div class="form-title">New Event</div>
         <div class="main-form-container">
 
             <div class="input-section-div">
-                <lightning:input type="text" required="true" name="Name" label="Account Name" placeholder="name" />
-                <lightning:input type="tel" name="Phone" label="Phone" placeholder="" />
+                <lightning:input type="text" name="Name" label="Account Name" placeholder="name" />
             </div>
-            
-            <div class="input-section-div">
-                <lightning:input type="text" name="Account Number" label="Account Number" />
-                <lightning:input type="text" name="Account Site" label="Account Site" />
-            </div>
-            
-            <div class="input-section-div">
-                <lightning:select name="account-type" label="Type">
-                    <option value="none">None</option>
-                    <option value="Prospect">Prospect</option>
-                    <option value="Customer - Direct">Customer - Direct</option>
-                    <option value="Customer - Channel">Customer - Channel</option>
-                    <option value="Channel Partner / Reseller">Channel Partner / Reseller</option>
-                    <option value="Installation Partner">Installation Partner</option>
-                    <option value="Technology Partner">Technology Partner</option>
-                </lightning:select>        
-                <lightning:select name="account-ownership" label="Ownership" >
-                    <option value="none">None</option>
-                    <option value="Public">Public</option>
-                    <option value="Private">Private</option>
-                    <option value="Subsidiary">Subsidiary</option>
-                    <option value="Other">Other</option>
-                </lightning:select>        
-            </div>
-
         </div>    
     </lightning:recordEditForm>
+
 </aura:component>

@@ -1,6 +1,4 @@
 trigger ContactTrigger on Contact    (before insert,after insert) {
-
-    
     if(Trigger.isBefore){
         for(Contact it:Trigger.new){
             Account tmp = [select Name,Id from Account Where Id =:it.AccountId];

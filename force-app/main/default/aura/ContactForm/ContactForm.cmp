@@ -2,7 +2,7 @@
     
     <aura:attribute name="conData" type="Object" />
 
-    <aura:registerEvent name="SendingDataToParent" type="c:FlowingDataFromWizard"/>
+    <aura:registerEvent name="sendcontacttoParent" type="c:FlowingDataFromWizard"/>
 
 
     <aura:method name="getData" access="Public" action="{!c.handleFormData}">

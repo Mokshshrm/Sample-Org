@@ -21,7 +21,7 @@
             Ownership: Ownership
         }
 
-        if (!helper.validation(data)) {
+        if (helper.validation(data)) {
             action.setParams({
                 SObject: 'accData',
                 data: undefined,

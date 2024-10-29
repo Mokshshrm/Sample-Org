@@ -41,10 +41,11 @@
     },
 
     handleSave: function (component, event, helper) {
-        
+        console.log('in handleSave');
     },
 
     handleExit: function (component, event, helper) {
+        console.log('in handleExit');
         $A.get("e.force:closeQuickAction").fire()
 
     },

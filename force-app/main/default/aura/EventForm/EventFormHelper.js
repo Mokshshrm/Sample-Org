@@ -1,5 +1,5 @@
 ({
-    helperMethod : function() {
-
+    validation: function (data) {
+        return true
     }
 })

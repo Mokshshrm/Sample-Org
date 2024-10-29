@@ -4,6 +4,7 @@
         console.log('parent render');
         return component;
     },
+    
     rerender: function (component, helper) {
         this.superRerender();
         console.log('parent rerender');
