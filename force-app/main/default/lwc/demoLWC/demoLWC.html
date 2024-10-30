@@ -1,3 +1,8 @@
 <template>
-    <h1></h1>
+    <lightning-button label="Open Modal" onclick={handleClick}></lightning-button>
+    <template if:true={isModalOpen}>
+        <template iterator:it={values}>
+            <c-child-component obj={objj} key={index} namee={it.value}></c-child-component>
+        </template>
+    </template>
 </template>
