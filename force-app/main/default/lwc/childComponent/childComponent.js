@@ -2,10 +2,11 @@ import { api, LightningElement, track } from 'lwc';
 
 export default class ChildComponent extends LightningElement {
 
-    constructor(){
+    constructor() {
         super();
         console.log('child')
     }
+    
     @api namee
     @api obj;
 
